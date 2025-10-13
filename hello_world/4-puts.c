@@ -1,2 +1,6 @@
 #!/bin/bash
-gcc 0-puzzle.c -o puzzle
+int main(void)
+{
+    puts("Programming is like building a multilingual puzzle");
+    return (0);
+}
