@@ -1,10 +1,11 @@
 #include <stdio.h>
-
 /**
  * main - Entry point
  *
+ * Description: prints the size of various types on the computer
+ *
  * Return: Always 0 (success)
- */
+*/
 int main(void)
 {
     printf("Size of a char: %lu byte(s)\n", (unsigned long)sizeof(char));
