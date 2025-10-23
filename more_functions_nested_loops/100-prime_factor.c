@@ -16,7 +16,7 @@ int main(void)
 		{
 			largest = factor;
 			n /= factor;
-			while (n % factor ==0)
+			while (n % factor == 0)
 				n /= factor;
 		}
 		factor++;
