@@ -1,6 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-char *_strcat(char *dest, char *src, int n);
+char *_strcpy(char *dest, char *src, int n);
 
 #endif
