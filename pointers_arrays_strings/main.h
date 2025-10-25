@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-int _atoi(char *s);
+char *_strcat(char *dest, char *src);
 
 #endif
