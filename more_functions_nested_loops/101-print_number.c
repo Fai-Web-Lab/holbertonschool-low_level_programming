@@ -2,19 +2,23 @@
 /**
  * print_number - prints an integer using only _putchar
  * @n: the integer to print
- *
- * Return: void
 */
 void print_number(int n)
 {
+	unsigned int num;
+
 	if (n < 0)
 	{
 		_putchar('_');
-		n = -n;
+		num = -n;
 	}
-	if (n / 10 != 0)
+	else
+	{
+		num = n;
+	}
+		if (num / 10)
 	{
 		print_number(n / 10);
 	}
-	_putchar((n % 10) + '0');
+	_putchar((num % 10) + '0');
 }
