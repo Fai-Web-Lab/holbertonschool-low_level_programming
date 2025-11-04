@@ -1,19 +1,19 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * alloc_grid - returns a pointer to a 2D aray of integers
+ * alloc_grid - returns a pointer to a 2D array of integers
  * @width: number of columns
- * @height: numbeer of rows
+ * @height: number of rows
  *
- * Description: allocates memory for a 2D grid initialized to 0
- * if width or height is 0 or negative, returns NULL
- * if memory allocation fails, frees previously allocated memory
+ * Description: Allocates a 2D grid of integers, initializes all
+ * elements to 0. Returns NULL if width or height is <= 0 or if
+ * memory allocation fails. Frees all allocated memory on failure.
  *
  * Return: pointer to the 2D array, or NULL on failure
 */
 int **alloc_grid(int width, int height)
 {
-	int **ggrid;
+	int **grid;
 	int i, j;
 
 	if (width <= 0 || height <= 0)
@@ -23,19 +23,20 @@ int **alloc_grid(int width, int height)
 	if (grid == NULL)
 		return (NULL);
 
-	for (i - 0; i < height; i++)
+	for (i = 0; i < height; i++)
 	{
 		grid[i] = malloc(sizeof(int) * width);
 		if (grid[i] == NULL)
 		{
-			while (i >= 0)
+			while (i > 0)
 			{
-				free(grid[i]);
 				i--;
+				free(grid[i]);
 			}
 			free(grid);
 			return (NULL);
 		}
+
 		for (j = 0; j < width; j++)
 			grid[i][j] = 0;
 	}
