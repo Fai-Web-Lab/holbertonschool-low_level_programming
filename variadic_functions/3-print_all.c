@@ -18,8 +18,8 @@ void print_all(const char * const format, ...)
 
 	while (format && format[i])
 	{
-		if (format[i] == 'c' || format[i] == 'i' || format[i] == 'f'
-i|| format[i] == 's')
+		if (format[i] == 'c' || format[i] == 'i' ||
+		    format[i] == 'f' || format[i] == 's')
 		{
 			printf("%s", sep);
 			if (format[i] == 'c')
