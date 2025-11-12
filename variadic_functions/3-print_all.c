@@ -21,7 +21,7 @@ void print_all(const char * const format, ...)
 		if (format[i] == 'c' || format[i] == 'i' || format[i] == 'f'
 i|| format[i] == 's')
 		{
-			prints("%s", sep);
+			printf("%s", sep);
 			if (format[i] == 'c')
 				printf("%c", va_arg(args, int));
 			if (format[i] == 'i')
@@ -30,7 +30,7 @@ i|| format[i] == 's')
 				printf("%f", va_arg(args, double));
 			if (format[i] == 's')
 			{
-				str = va_arg(args, char *)
+				str = va_arg(args, char *);
 				if (str == NULL)
 					str = "(nil)";
 				printf("%s", str);
