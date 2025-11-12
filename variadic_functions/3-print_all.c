@@ -19,11 +19,11 @@ void print_all(const char * const format, ...)
 	while (format && format[i])
 	{
 		if (format[i] == 'c' || format[i] == 'i' || format[i] == 'f'
-|| format[i] == 's')
+i|| format[i] == 's')
 		{
 			prints("%s", sep);
 			if (format[i] == 'c')
-				prints("%c", va_arg(args, int));
+				printf("%c", va_arg(args, int));
 			if (format[i] == 'i')
 				printf("%d", va_arg(args, int));
 			if (format[i] == 'f')
