@@ -8,9 +8,9 @@
  * Description: c = char, i = int, f = float, s = string
  * If a string is NULL, (nil) is printed instead.
  * Any other format character is ignored.
- * Return: SUCCESS
+ * Return: Nothing
 */
-int print_all(const char * const format, ...)
+void print_all(const char * const format, ...)
 {
 	va_list args;
 	unsigned int i = 0;
