@@ -9,9 +9,12 @@
  * @message: message to print
  * @file: filename to include in error message
 */
-void error_exit(int code, const char *message, const char *file)
+void error_exit(int code, const char *msg, const char *file)
 {
-	dprintf(STDERR_FILENO, "%s %s\n", message, file);
+	if (file == NULL || file[0] == '\0')
+		dprintf(STDERR_FILENO, "%s\n", msg);
+	else
+		dprintf(STDERR_FILENO, "%s %s\n", msg, file);
 	exit(code);
 }
 
