@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#define BUF_SIZE 1024
 /**
  * error_exit - print error message and exit
  * @code: exit code
