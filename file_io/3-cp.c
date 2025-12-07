@@ -46,7 +46,8 @@ int main(int argc, char *argv[])
 	{
 		w = write(fd_to, buffer, r);
 		if (w != r)
-			error_exit(99, "error: can't write to", argv[2]);
+			error_exit(99, "error: can't write to %s\n", argv[2][0] ? argv[2] : " ");
+		exit(99);
 	}
 
 	if (r == -1)
