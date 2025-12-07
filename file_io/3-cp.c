@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
-#define BUF_SIZE 1024
 /**
  * error_exit - print error message and exit
  * @code: exit code
@@ -45,19 +44,11 @@ int main(int argc, char *argv[])
 	{
 		w = write(fd_to, buffer, r);
 		if (w != r)
-		{
-			close(fd_from);
-			close(fd_to);
-			error_exit(99, "Error: Can't write to", argv[2]);
-		}
+			error_exit(99, "error: can't write to %s\n", argv[2], -1);
 	}
 
 	if (r == -1)
-	{
-		close(fd_from);
-		close(fd_to);
 		error_exit(98, "Error: Can't read from file", argv[1]);
-	}
 
 	if (close(fd_from) == -1)
 		error_exit(100, "Error: Can't close fd", "fd_from");
