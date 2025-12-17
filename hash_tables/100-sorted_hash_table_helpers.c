@@ -1,11 +1,11 @@
 #include "hash_tables.h"
 
 /**
- * create_node - Creates a new sorted hash table node
+ * create_node - Creates a new sorted hash node
  * @key: Key string
  * @value: Value string
  *
- * Return: Pointer to the created node, or NULL on failure
+ * Return: Pointer to node or NULL
  */
 static shash_node_t *create_node(const char *key, const char *value)
 {
@@ -33,8 +33,8 @@ static shash_node_t *create_node(const char *key, const char *value)
 }
 
 /**
- * insert_sorted - Inserts a node into the sorted linked list
- * @ht: Pointer to the sorted hash table
+ * insert_sorted - Inserts node into sorted linked list
+ * @ht: Pointer to table
  * @node: Node to insert
  */
 static void insert_sorted(shash_table_t *ht, shash_node_t *node)
@@ -74,13 +74,13 @@ static void insert_sorted(shash_table_t *ht, shash_node_t *node)
 }
 
 /**
- * shash_table_set_helper - Handles insertion and update in sorted hash table
- * @ht: Pointer to the sorted hash table
- * @key: Key to insert or update
- * @value: Value to associate with key
- * @index: Index in the hash table array
+ * shash_table_set_helper - Handles insertion and update
+ * @ht: Table pointer
+ * @key: Key
+ * @value: Value
+ * @index: Index in array
  *
- * Return: Pointer to the node, or NULL on failure
+ * Return: Pointer to node or NULL
  */
 shash_node_t *shash_table_set_helper(shash_table_t *ht,
 				     const char *key,
@@ -114,8 +114,8 @@ shash_node_t *shash_table_set_helper(shash_table_t *ht,
 }
 
 /**
- * shash_table_delete - Deletes a sorted hash table
- * @ht: Pointer to the sorted hash table
+ * shash_table_delete - Deletes entire sorted hash table
+ * @ht: Pointer to table
  */
 void shash_table_delete(shash_table_t *ht)
 {

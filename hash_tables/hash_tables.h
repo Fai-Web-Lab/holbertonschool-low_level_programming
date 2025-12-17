@@ -8,11 +8,11 @@
 /**
  * struct shash_node_s - Node of a sorted hash table
  *
- * @key: The key, string (unique)
- * @value: The value corresponding to the key
- * @next: Pointer to the next node in the hash table chain
- * @sprev: Pointer to the previous node in the sorted list
- * @snext: Pointer to the next node in the sorted list
+ * @key: Key string, unique
+ * @value: Value string
+ * @next: Next node in hash table chain
+ * @sprev: Previous node in sorted linked list
+ * @snext: Next node in sorted linked list
  */
 typedef struct shash_node_s
 {
@@ -26,10 +26,10 @@ typedef struct shash_node_s
 /**
  * struct shash_table_s - Sorted hash table
  *
- * @size: Size of the array
- * @array: Array of linked lists (chaining)
- * @shead: Head of the sorted linked list
- * @stail: Tail of the sorted linked list
+ * @size: Size of array
+ * @array: Array of linked list heads
+ * @shead: Head of sorted linked list
+ * @stail: Tail of sorted linked list
  */
 typedef struct shash_table_s
 {
@@ -49,6 +49,9 @@ void shash_table_delete(shash_table_t *ht);
 unsigned long int hash_djb2(const unsigned char *str);
 unsigned long int key_index(const unsigned char *key,
 			    unsigned long int size);
+shash_node_t *shash_table_set_helper(shash_table_t *ht,
+				     const char *key,
+				     const char *value,
+				     unsigned long int index);
 
 #endif
-
